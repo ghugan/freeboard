@@ -1,21 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
- @ghugan
- Sign out
- Watch 5
-  Star 11  Fork 7 onlinux/freeboard-plugins
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights
-Branch: master Find file Copy pathfreeboard-plugins/actuator.js
-598465c  on Nov 19, 2016
-@onlinux onlinux fix description tag
-1 contributor
-RawBlameHistory     
-169 lines (147 sloc)  6.55 KB
+
 // ┌────────────────────────────────────────────────────────────────────┐ \\
 // │ freeboard-actuator-plugin                                          │ \\
 // ├────────────────────────────────────────────────────────────────────┤ \\

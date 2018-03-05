@@ -38,9 +38,21 @@
                 type: "calculated"
             },
             {
+                name: "Onbody",
+                display_name: "body",
+                type: "text",
+                default_value: '{}'
+            },
+            {
                 name: "urlOff",
                 display_name: "url Off ",
                 type: "calculated"
+            },
+             {
+                name: "Offbody",
+                display_name: "body",
+                type: "text",
+                default_value: '{}'
             },
             {
                 name: "on_text",
@@ -84,6 +96,7 @@
         var onText;
         var offText;
         var url;
+        var body;
         
         function updateState() {
             console.log("isOn: " + isOn);
@@ -115,7 +128,7 @@
          
         var request;
         
-        var sendValue = function (url, options) {
+        var sendValue = function (url,body, options) {
             console.log(url, options);
             request = new XMLHttpRequest();
             if (!request) {
@@ -123,9 +136,9 @@
                 return false;
             }
             request.onreadystatechange = alertContents;
-            request.open('GET', url, true);
+            request.open('POST', url, true);
             freeboard.showLoadingIndicator(true);
-            request.send();
+            request.send(body);
         }
 
         this.render = function (element) {
@@ -136,10 +149,11 @@
                     isOn =!isOn;
                     console.log( thisWidgetId + ": toogled " + isOn);
                     url = (isOn) ? currentSettings.urlOn: currentSettings.urlOff;
+                    body= (isOn) ? currentSettings.Onbody: currentSettings.Offbody;
                     if ( _.isUndefined(url) )
                         freeboard.showDialog($("<div align='center'>url undefined</div>"),"Error!","OK",null,function(){});
                     else {
-                        sendValue(url, isOn);
+                        sendValue(url,body,isOn);
                  
                     }
                     

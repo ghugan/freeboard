@@ -44,6 +44,23 @@
                 default_value: '{}'
             },
             {
+				name: "headers",
+				display_name: "Headers",
+				type: "array",
+				settings: [
+					{
+						name: "name",
+						display_name: "Name",
+						type: "text"
+					},
+					{
+						name: "value",
+						display_name: "Value",
+						type: "text"
+					}
+				]
+			},
+            {
                 name: "urlOff",
                 display_name: "url Off ",
                 type: "calculated"
@@ -54,6 +71,23 @@
                 type: "text",
                 default_value: '{}'
             },
+            {
+				name: "headers",
+				display_name: "Headers",
+				type: "array",
+				settings: [
+					{
+						name: "name",
+						display_name: "Name",
+						type: "text"
+					},
+					{
+						name: "value",
+						display_name: "Value",
+						type: "text"
+					}
+				]
+			},
             {
                 name: "on_text",
                 display_name: "On Text",

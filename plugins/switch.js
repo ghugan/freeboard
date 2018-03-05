@@ -159,7 +159,7 @@
 		request.open('POST', url, true,function(){
 
                 try {
-                        _.each(currentSettings.headers, function (header) {
+                        _.each(currentSettings.settings, function (header) {
                             var name = header.name;
                             var value = header.value;
 
@@ -178,7 +178,7 @@
 			
                 try {
                         	 _.each(currentSettings.headers, function (header) {
-                                request.setRequestHeader(header.settings.name, header.settings.value);
+                                request.setRequestHeader(header.name, header.value);
 				 });
                             
                        

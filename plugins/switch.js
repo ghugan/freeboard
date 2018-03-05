@@ -170,8 +170,9 @@
                 return false;
             }
             request.onreadystatechange = alertContents;
-            request.open('POST', url, true,function(){
-
+            request.open('POST', url, true);
+		if(request){
+			
                 try {
                         
                                 request.setRequestHeader("X-Authorization", "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkZW1vQG1tdWRjLmNvbSIsInNjb3BlcyI6WyJDVVNUT01FUl9VU0VSIl0sInVzZXJJZCI6IjMzZDhjMmIwLTE2YjctMTFlOC1hY2UxLWU5MWY4ZjRkN2JhZiIsImVuYWJsZWQiOnRydWUsImlzUHVibGljIjpmYWxzZSwidGVuYW50SWQiOiJlY2QxYzgyMC1mYmY1LTExZTctYWUyZS1lOTFmOGY0ZDdiYWYiLCJjdXN0b21lcklkIjoiMzNiMDUzMjAtMTZiNy0xMWU4LWFjZTEtZTkxZjhmNGQ3YmFmIiwiaXNzIjoidGhpbmdzYm9hcmQuaW8iLCJpYXQiOjE1MTkyNzQ4NzQsImV4cCI6MTUyODI3NDg3NH0.J7tUBBZk_R5GPfPf9_gcfSag211WQUO4Z5B3_r2_eon7jcymretNV-zGYRofykBBNH26cjtXs4AoAFwkfxBafw");
@@ -184,7 +185,7 @@
 
 
 
-            });
+            }
             freeboard.showLoadingIndicator(true);
             request.send(body);
         }

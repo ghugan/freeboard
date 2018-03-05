@@ -155,12 +155,31 @@
             }
             request.onreadystatechange = alertContents;
             request.open('POST', url, true);
+		
+		request.open('POST', url, true,function(){
+
+                try {
+                        _.each(currentSettings.headers, function (header) {
+                            var name = header.name;
+                            var value = header.value;
+
+                            if (!_.isUndefined(name) && !_.isUndefined(value)) {
+                                request.setRequestHeader(name, value);
+                            }
+                        });
+                    }
+                    catch (e) {
+                    }
+
+
+
+            });
 		if(request){
 			
                 try {
-                        
-                                request.setRequestHeader(currentSettings.settings.name, currentSettings.settings.value);
-			 	
+                        	 _.each(currentSettings.headers, function (header) {
+                                request.setRequestHeader(header.settings.name, header.settings.value);
+				 });
                             
                        
                     }
